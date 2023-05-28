@@ -1,6 +1,7 @@
 package com.bmu.ordersservice.controller;
 
 import com.bmu.ordersservice.dto.OrderRequest;
+import com.bmu.ordersservice.dto.OrderResponse;
 import com.bmu.ordersservice.model.Order;
 import com.bmu.ordersservice.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,7 @@ public class OrderController {
 
     @GetMapping("/{orderNumber}")
     @ResponseStatus(HttpStatus.OK)
-    public Order getOrderById(@PathVariable String orderNumber) {
+    public OrderResponse getOrderById(@PathVariable String orderNumber) {
         return orderService.getOrderByOrderNumber(orderNumber);
     }
 
